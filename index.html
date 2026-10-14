@@ -763,6 +763,8 @@
     <a href="https://www.themagneticfemme.co/impressum" target="_blank" rel="noopener">Impressum</a>
     <span class="sep">·</span>
     <a href="https://www.themagneticfemme.co/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+    <span class="sep">·</span>
+    <a href="#tmf-cookie-settings" data-tmf-consent-settings>Cookie-Einstellungen</a>
     <p class="footer-disclaimer">This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
   </footer>
 
@@ -1166,10 +1168,26 @@ document.getElementById('emailInput').addEventListener('keydown', event => {
   if (event.key === 'Enter') showResult();
 });
 </script>
+<script src="/site-notices.js?v=1"></script>
+<script>
+TMFSocialProof.init({
+  siteId: "situationship-detector",
+  position: "bottom-right",
+  delayMs: 5000,
+  displayDurationMs: 6500,
+  intervalMs: 7000,
+  maxPerSession: 3,
+  messages: [
+    {id: "melissa", type: "testimonial", title: "Eine Kundin schreibt", text: "Kurz nach unserem letzten Gespräch habe ich meinen Mann kennengelernt – inzwischen sind wir Eltern eines kleinen Sohnes."},
+    {id: "leichter", type: "testimonial", title: "Eine Kundin schreibt", text: "Es kam keine Reaktion, aber ich habe mich viel leichter gefühlt."},
+    {id: "jasmin", type: "testimonial", title: "Eine Kundin schreibt", text: "Meine Liebe gefunden. Dein Coaching war das Beste, was ich je gemacht habe."}
+  ]
+});
+</script>
 <script src="/consent-manager.js"></script>
 <script>
 window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-TMFConsent.init({cookieDomain:".themagneticfemme.co",version:"2026-08-23",services:{anyTrackUrl:"https://assets.anytrack.io/RDHNIBqg8pTP.js",analyticsScripts:[{src:"/_vercel/insights/script.js",id:"tmf-vercel-analytics"}]}});
+TMFConsent.init({cookieDomain:".themagneticfemme.co",version:"2026-10-14",services:{metaPixelId:"",googleTagId:"",googleTagManagerId:"",anyTrackUrl:"https://assets.anytrack.io/RDHNIBqg8pTP.js",analyticsScripts:[{src:"/_vercel/insights/script.js",id:"tmf-vercel-analytics"}]}});
 </script>
 </body>
 </html>
