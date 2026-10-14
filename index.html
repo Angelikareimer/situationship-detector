@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Facebook Domain Verification -->
+<meta name="facebook-domain-verification" content="msu93kntcjwfsqz6mbq0qz2geasgkc" />
+
+<title>Situationship Test: Will er eine Beziehung oder hält er dich hin?</title>
+<meta name="description" content="10 Fragen zeigen dir, ob aus euch wirklich eine Beziehung werden kann oder ob du schon länger auf eine Entscheidung wartest, die er nicht trifft.">
+<meta name="theme-color" content="#f7f1ee">
+<link rel="canonical" href="https://detector.themagneticfemme.co/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Der Situationship Detector · The Magnetic Femme">
+<meta property="og:description" content="10 Fragen zeigen dir, ob aus euch wirklich eine Beziehung werden kann oder ob du schon länger auf seine Entscheidung wartest.">
+<meta property="og:url" content="https://detector.themagneticfemme.co/">
+<meta property="og:image" content="https://detector.themagneticfemme.co/angelika-fenster.jpg">
+
+<style>
+  @font-face {
+    font-family: 'Playfair Display';
+    src: url('/playfair.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Playfair Display';
+    src: url('/playfair-italic.woff2') format('woff2');
+    font-style: italic;
+    font-weight: 400 800;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Mulish';
+    src: url('/mulish.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300 800;
+    font-display: swap;
+  }
+
+  /* ════════════════════════════════════════════════
+     WARM-LUXURY PALETTE — Creme + Bordeaux (neue CI)
+     ════════════════════════════════════════════════ */
+  :root {
+    --bg:        #f7f1ee;
+    --bg-soft:   #eee3df;
+    --bg-card:   #fffaf7;
+    --bg-hover:  #f3e6e1;
+    --text:      #2f2521;
+    --text-mut:  #6e5b52;
+    --accent:    #a6685f;
+    --accent-dk: #934d45;
+    --primary:   #5a4034;
+    --primary-dk:#453027;
+    --on-primary:#fffaf7;
+    --line:      rgba(90,64,52,0.18);
+    --line-soft: rgba(90,64,52,0.09);
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --sans: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, rgba(166,104,95,0.08), transparent 60%),
+      radial-gradient(100% 60% at 100% 110%, rgba(90,64,52,0.06), transparent 55%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .stage {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Quiz-, Eingabe- und Ergebnis-Screens bleiben schmal & gut lesbar; der Intro-Hero darf breiter werden */
+  .progress-wrap, .screen, .result-screen, .site-footer {
+    width: 100%; max-width: 760px; margin-left: auto; margin-right: auto;
+  }
+  #screen-intro { max-width: 1040px; }
+
+  .brand-bar {
+    width: 100%; max-width: 1040px; margin: 0 auto;
+    padding: 24px 0 0; display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    color: var(--primary); text-decoration: none; font-family: var(--serif);
+    font-size: 1.1rem; line-height: 1; letter-spacing: -0.015em;
+  }
+  .brand span { display: block; font-family: var(--sans); font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; margin-top: 6px; }
+  .back-link {
+    color: var(--text-mut); text-decoration: none; font-size: .8rem; font-weight: 700;
+    min-height: 44px; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .back-link:hover, .back-link:focus-visible { color: var(--accent-dk); }
+
+  /* ─── PROGRESS ─── */
+  .progress-wrap {
+    padding: 30px 0 0;
+  }
+  .progress-meta {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-mut);
+    margin-bottom: 12px;
+  }
+  .progress-meta span:last-child {
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    font-size: 0.92rem; letter-spacing: 0.02em; text-transform: none;
+    color: var(--primary);
+  }
+  .progress-bar {
+    height: 3px; background: var(--line-soft);
+    border-radius: 3px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    width: 100%; border-radius: 3px;
+    transform: scaleX(0); transform-origin: left center;
+    transition: transform 0.5s var(--ease-out);
+  }
+
+  /* ─── SCREENS ─── */
+  .screen {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 44px 0 64px;
+    animation: fade 0.28s var(--ease-out) both;
+  }
+  .screen.active { display: flex; }
+
+  @keyframes fade {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── INTRO ─── */
+  .eyebrow {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.26em; text-transform: uppercase;
+    color: var(--accent-dk); margin-bottom: 26px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .eyebrow::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--line), transparent); max-width: 90px;
+  }
+
+  /* ─── INTRO HERO (zentrierter Funnel-Aufbau) ─── */
+  .intro-hero {
+    width: 100%; max-width: 100%; margin: 0;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 54px; align-items: center;
+    text-align: left;
+  }
+  .intro-content { min-width: 0; }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.9rem, 6.2vw, 4.6rem);
+    font-weight: 600; line-height: 1.02;
+    letter-spacing: -0.01em; margin-bottom: 24px;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--primary); font-weight: 600; }
+
+  .intro-lead {
+    font-size: 1.12rem; color: var(--text-mut);
+    margin-bottom: 16px; max-width: 540px;
+  }
+  .intro-lead strong { color: var(--text); font-weight: 600; }
+
+  .intro-hero .btn { align-self: flex-start; margin-top: 24px; }
+
+  .trust-row {
+    display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px;
+    margin-top: 26px;
+  }
+  .trust-pill {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-mut);
+    padding: 9px 17px; border: 1px solid var(--line);
+    border-radius: 100px; background: var(--bg-card);
+  }
+
+  /* Prominentes Hero-Porträt (linke Spalte), das sanft hereinschwebt */
+  .hero-portrait {
+    width: 100%; max-width: 420px; aspect-ratio: 2 / 3;
+    margin: 0; justify-self: center; position: relative;
+    border-radius: 26px; overflow: hidden;
+    background: #f1ebe1;
+    box-shadow: 0 40px 80px -32px rgba(33,26,23,0.5);
+    animation: heroFloatIn 1.05s var(--ease-out) 0.22s both;
+  }
+  .hero-portrait img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 34%;
+    display: block;
+  }
+  .hero-portrait.noimg::before {
+    content: 'Angelika'; position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-style: italic; color: var(--text-mut); font-size: 1rem;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 12px; padding: 20px 48px;
+    background: var(--primary); color: var(--on-primary);
+    border: none; border-radius: 999px;
+    font-family: var(--sans); font-size: 1.02rem;
+    font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; box-shadow: 0 18px 44px -16px rgba(90,64,52,0.42);
+    transition: background 0.2s ease, transform 160ms var(--ease-out), box-shadow 0.2s ease;
+    align-self: flex-start; text-decoration: none;
+  }
+  .btn:hover { background: var(--primary-dk); }
+  .btn:active { transform: scale(0.97); }
+  .btn-block { width: 100%; align-self: stretch; }
+  .btn .arrow { font-size: 1.05em; line-height: 1; transition: transform 0.22s var(--ease-out); }
+
+  .btn-ghost {
+    background: transparent; color: var(--text-mut);
+    border: 1px solid var(--line);
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+    letter-spacing: 0.04em; cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--text-mut); background: rgba(255,255,255,0.4); }
+
+  .btn-text {
+    background: none; border: none; color: var(--text-mut);
+    font-family: var(--sans); font-size: 0.82rem; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 3px;
+    padding: 8px 0; letter-spacing: 0.02em;
+  }
+  .btn-text:hover { color: var(--primary); }
+
+  /* ─── QUESTIONS ─── */
+  .q-count {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--accent-dk);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .q-count::before {
+    content: ''; width: 26px; height: 1px; background: var(--accent);
+  }
+  .q-text {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    font-weight: 600; line-height: 1.18;
+    letter-spacing: -0.005em;
+    margin-bottom: 36px; max-width: 640px;
+    text-wrap: pretty;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 12px; counter-reset: opt; }
+  .option {
+    position: relative;
+    text-align: left; width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 24px 20px 68px;
+    color: var(--text); font-family: var(--sans);
+    font-size: 1.04rem; line-height: 1.5;
+    counter-increment: opt;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 160ms var(--ease-out), box-shadow 0.2s ease;
+  }
+  .option::before {
+    content: counter(opt, lower-alpha);
+    position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    font-size: 0.92rem; color: var(--text-mut);
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+  .option:hover {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+  }
+  .option:hover::before { border-color: var(--primary); color: var(--primary); }
+  .option:active { transform: scale(0.985); }
+  .option.selected {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+  }
+  .option.selected::before {
+    border-color: var(--primary); background: var(--primary); color: var(--on-primary);
+  }
+
+  .q-nav {
+    margin-top: 32px;
+    display: flex; align-items: center; gap: 16px;
+  }
+
+  /* ─── FREETEXT ─── */
+  textarea {
+    width: 100%; background: var(--bg-card);
+    border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px 20px; color: var(--text);
+    font-family: var(--sans); font-size: 0.99rem;
+    line-height: 1.6; resize: vertical; min-height: 124px;
+    outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(147,77,69,0.12); }
+  textarea::placeholder { color: #a59a8c; }
+
+  input[type=email], input[type=text] {
+    width: 100%; background: var(--bg-card);
+    border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px 20px; color: var(--text);
+    font-family: var(--sans); font-size: 0.99rem;
+    outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input[type=email]:focus, input[type=text]:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(147,77,69,0.12); }
+  input::placeholder { color: #a59a8c; }
+
+  .field-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--text-mut);
+    margin-bottom: 10px; display: block;
+  }
+  .field { margin-bottom: 22px; }
+  .field-hint {
+    font-size: 0.78rem; color: var(--text-mut);
+    margin-top: 8px;  }
+
+  /* ─── DANKE (Übergang) ─── */
+  .danke-wrap {
+    max-width: 620px; margin: 0 auto; text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .danke-headline {
+    font-family: var(--serif);
+    font-size: clamp(2.3rem, 5.4vw, 3.4rem);
+    font-weight: 600; line-height: 1.08;
+    letter-spacing: -0.01em; margin: 4px 0 22px;
+    text-wrap: balance;
+  }
+  .danke-body {
+    font-size: 1.08rem; color: var(--text-mut);
+    line-height: 1.7; margin-bottom: 15px; max-width: 520px;
+  }
+  .danke-line {
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    font-size: 1.4rem; color: var(--primary); line-height: 1.4;
+    margin: 22px 0 34px; text-wrap: balance;
+  }
+  .danke-wrap .btn { align-self: center; }
+
+  /* ─── RESULT ─── */
+  .result-screen { display: none; padding: 48px 0 60px; }
+  .result-screen.active { display: block; animation: fade 0.65s ease both; }
+
+  .res-divider {
+    height: 1px; background: var(--line);
+    margin: 30px 0;
+  }
+  .res-divider.thick {
+    height: 1px; background: var(--primary);
+    opacity: 0.45;
+  }
+
+  .res-label {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent-dk); margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .res-label::before {
+    content: ''; width: 26px; height: 1px; background: var(--accent);
+  }
+
+  .res-headline {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 6vw, 3.5rem);
+    font-weight: 600; line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px; text-wrap: pretty;
+  }
+
+  .res-diagnose {
+    font-size: 1.2rem; color: var(--text);
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    line-height: 1.5; margin-top: 12px; max-width: 560px;
+  }
+
+  .res-block p {
+    color: var(--text-mut); margin-bottom: 13px;
+    font-size: 1.06rem; line-height: 1.7;
+  }
+  .res-block p.standout {
+    color: var(--text);
+    font-family: var(--serif);
+    font-style: italic; font-weight: 500; font-size: 1.22rem; line-height: 1.45;
+  }
+
+  .res-quote {
+    border-left: 2px solid var(--primary);
+    padding: 6px 0 6px 22px;
+    margin: 20px 0;
+    font-family: var(--serif);
+    font-style: italic; font-weight: 500; font-size: 1.35rem;
+    color: var(--text); line-height: 1.45;
+  }
+
+  .res-cta {
+    background: var(--bg-soft);
+    background-image: radial-gradient(120% 100% at 0% 0%, rgba(176,141,87,0.12), transparent 55%);
+    border: 1px solid var(--line);
+    border-radius: 24px; padding: 38px 34px;
+    margin-top: 8px;
+  }
+  .res-cta p { color: var(--text-mut); margin-bottom: 13px; font-size: 1.06rem; line-height: 1.7; }
+  .res-cta p.standout { color: var(--text); font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 1.18rem; line-height: 1.45; }
+  .res-cta .btn { margin-top: 24px; }
+  .res-cta-link {
+    display: inline-block; margin-top: 16px;
+    font-size: 0.84rem; color: var(--text-mut);
+    text-decoration: underline; text-underline-offset: 3px;
+  }
+  .res-cta-link:hover { color: var(--primary); }
+  .res-cta-sub {
+    font-size: 0.9rem; color: var(--text-mut);
+    margin-top: 16px; line-height: 1.6; max-width: 480px;
+  }
+  .res-disclaimer {
+    font-size: 0.8rem; color: var(--text-mut);
+    line-height: 1.7; margin-top: 30px;
+    padding-top: 24px; border-top: 1px solid var(--line-soft);
+    max-width: 620px;
+  }
+
+  .res-anchor {
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem; font-weight: 500;
+    letter-spacing: 0.01em; color: var(--primary);
+    padding: 44px 0 12px;
+  }
+
+  /* Persönliche Beobachtungen statt Typen-Dashboard */
+  .result-evidence {
+    margin: 30px 0 8px;
+    padding: 26px 0 8px;
+    border-top: 1px solid var(--line);
+  }
+  .evidence-label {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent-dk); margin-bottom: 18px;
+  }
+  .evidence-list { list-style: none; counter-reset: evidence; }
+  .evidence-list li {
+    counter-increment: evidence;
+    position: relative; padding: 0 0 18px 48px;
+    color: var(--text); font-size: 1.03rem; line-height: 1.6;
+  }
+  .evidence-list li::before {
+    content: counter(evidence, decimal-leading-zero);
+    position: absolute; left: 0; top: 1px;
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    font-size: 1rem; color: var(--primary);
+  }
+  .release-card {
+    margin-top: 28px;
+    background: var(--primary);
+    color: var(--on-primary);
+    padding: 40px 34px;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px -34px rgba(33,26,23,0.65);
+  }
+  .release-card:empty { display: none; }
+  .release-kicker {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: rgba(246,241,234,0.72);
+    margin-bottom: 18px;
+  }
+  .release-card h3 {
+    font-family: var(--serif); font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.05; font-weight: 600; margin-bottom: 18px;
+  }
+  .release-card h3 em { color: #e5c99b; font-style: italic; }
+  .release-price { white-space: nowrap; }
+  .release-card p {
+    color: rgba(246,241,234,0.84); font-size: 1.02rem;
+    line-height: 1.7; margin-bottom: 12px;
+  }
+  .release-card .btn {
+    margin-top: 18px; background: var(--on-primary); color: var(--primary);
+    box-shadow: none;
+  }
+  .release-card .btn:hover { background: #fffaf3; }
+  .release-note {
+    margin-top: 16px; font-size: 0.78rem;
+    color: rgba(246,241,234,0.68);
+  }
+
+  /* ─── FOOTER ─── */
+  .site-footer {
+    border-top: 1px solid var(--line-soft);
+    padding: 24px 0 30px;
+    text-align: center;
+    font-size: 0.78rem; color: var(--text-mut);
+    line-height: 1.7;
+  }
+  .form-trust {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;
+    margin: 24px 0 20px;
+  }
+  .form-trust span {
+    background: rgba(255,250,247,.72); border: 1px solid var(--line-soft); border-radius: 14px;
+    padding: 12px 10px; text-align: center; color: var(--text-mut); font-size: .76rem; font-weight: 700;
+  }
+  .hp-field { position: absolute !important; left: -9999px !important; opacity: 0 !important; pointer-events: none !important; }
+  .error-message { color: #934d45; font-size: .84rem; margin: 14px 0; display: none; }
+  button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid rgba(147,77,69,.32); outline-offset: 3px;
+  }
+  .site-footer a {
+    color: var(--text-mut); text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-footer a:hover { color: var(--primary); border-color: var(--primary); }
+  .site-footer .sep { margin: 0 8px; opacity: 0.6; }
+  .footer-disclaimer {
+    max-width: 580px; margin: 16px auto 0;
+    font-size: 0.68rem; line-height: 1.6;
+    color: var(--text-mut); opacity: 0.85;
+  }
+
+  @media (max-width: 540px) {
+    .stage { padding: 0 18px; }
+    .q-nav { flex-wrap: wrap; }
+    .res-cta { padding: 28px 22px; }
+    .release-card { padding: 32px 22px; }
+    .option { padding: 18px 20px 18px 60px; }
+    .option::before { left: 16px; width: 28px; height: 28px; }
+    .brand-bar { padding-top: 18px; }
+    .back-link { font-size: 0; }
+    .back-link::after { content: 'Zur Website'; font-size: .75rem; }
+    .form-trust { grid-template-columns: 1fr; }
+    .btn { width: 100%; padding: 17px 22px; }
+  }
+  /* Emil-Politur: gestaffelter Auftritt der Antworten (opacity-only, damit Press-Scale frei bleibt) */
+  .screen.active .options .option { opacity: 0; animation: optionIn 300ms var(--ease-out) forwards; }
+  .screen.active .options .option:nth-child(1) { animation-delay: 40ms; }
+  .screen.active .options .option:nth-child(2) { animation-delay: 100ms; }
+  .screen.active .options .option:nth-child(3) { animation-delay: 160ms; }
+  .screen.active .options .option:nth-child(4) { animation-delay: 220ms; }
+  @keyframes optionIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeRM { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes heroFloatIn { from { opacity: 0; transform: translateY(46px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  @keyframes heroBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+  /* Hover-Effekte mit Bewegung nur bei echtem Zeiger — verhindert klebriges Hover nach Touch-Tap */
+  @media (hover: hover) and (pointer: fine) {
+    .btn:hover { box-shadow: 0 22px 52px -16px rgba(90,64,52,0.52); transform: translateY(-1px); }
+    .btn:hover .arrow { transform: translateX(4px); }
+    .option:hover { box-shadow: 0 14px 28px -22px rgba(33,26,23,0.5); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .screen, .result-screen.active { animation: fadeRM 0.2s ease both; }
+    .screen.active .options .option { animation: none; opacity: 1; transform: none; }
+    .progress-fill { transition: none; }
+    .btn:active, .option:active { transform: none; }
+    .hero-portrait { animation: fadeRM 0.3s ease both; }
+  }
+  /* Mobile/Tablet: einspaltig, Bild zuerst */
+  @media (max-width: 760px) {
+    .intro-hero { grid-template-columns: 1fr; gap: 30px; }
+    .hero-portrait { max-width: 260px; justify-self: start; }
+  }
+</style>
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#f4eee6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f4eee6"/>
+    <circle cx="600" cy="360" r="150" fill="none" stroke="#5a4034" stroke-width="6"/>
+    <text x="600" y="360" font-family="Georgia, serif" font-style="italic" font-size="170" fill="#5a4034" text-anchor="middle" dominant-baseline="central">M</text>
+    <text x="600" y="600" font-family="Georgia, serif" font-size="44" letter-spacing="6" fill="#756a5e" text-anchor="middle">THE MAGNETIC FEMME</text>
+  </svg>
+</template>
+
+<div class="stage">
+
+  <header class="brand-bar">
+    <a class="brand" href="https://www.themagneticfemme.co" aria-label="The Magnetic Femme Startseite">
+      The Magnetic Femme
+      <span>by Angelika Reimer</span>
+    </a>
+    <a class="back-link" href="https://www.themagneticfemme.co"><span aria-hidden="true">←</span> Zur Website</a>
+  </header>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progressWrap" style="visibility:hidden;">
+    <div class="progress-meta">
+      <span id="progressStep">Frage 1 von 10</span>
+      <span>Situationship Detector</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="screen active" id="screen-intro">
+    <div class="intro-hero">
+    <div class="hero-portrait" id="introPortrait"><img src="angelika-fenster.jpg" alt="Angelika Reimer" onerror="this.parentNode.classList.add('noimg'); this.remove();"></div>
+
+    <div class="intro-content">
+    <div class="eyebrow">Kostenfreier 2-Minuten-Check</div>
+    <h1>Der Situationship <em>Detector</em></h1>
+    <p class="intro-lead"><strong>Will er wirklich mehr oder hält er dich hin?</strong></p>
+    <p class="intro-lead">10 Fragen zeigen dir, ob aus euch wirklich eine Beziehung werden kann oder ob du schon länger auf eine Entscheidung wartest, die er nicht trifft.</p>
+    <button class="btn" onclick="startQuiz()">Ich will wissen, woran ich bin <span class="arrow">→</span></button>
+
+    <div class="trust-row">
+      <span class="trust-pill">10 Fragen</span>
+      <span class="trust-pill">2 Minuten</span>
+      <span class="trust-pill">Persönliches Ergebnis</span>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- QUESTION SCREENS (injected) -->
+  <div id="questionContainer"></div>
+
+  <!-- FREETEXT -->
+  <div class="screen" id="screen-freetext">
+    <div class="q-count">Fast geschafft</div>
+    <div class="q-text">Welche Frage zu euch lässt dich gerade nicht los?</div>
+    <p style="color:var(--text-mut); margin-bottom:24px; font-size:1.02rem; max-width:560px;">
+      Schreib den Satz auf, den du im Kopf immer wieder neu beantwortest.
+    </p>
+    <textarea id="freetextInput" placeholder="Zum Beispiel: Will er wirklich mehr oder halte ich mich an Hoffnung fest?"></textarea>
+    <div class="field-hint">Optional. Wenn du magst, lass es leer und geh weiter.</div>
+    <div class="q-nav">
+      <button class="btn" onclick="goToEmail()">Weiter <span class="arrow">→</span></button>
+      <button class="btn-text" onclick="skipFreetext()">Überspringen</button>
+    </div>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="screen" id="screen-email">
+    <div class="q-count">Fast geschafft</div>
+    <div class="q-text">Deine persönliche Auswertung ist fertig.</div>
+    <p style="color:var(--text-mut); margin-bottom:26px; font-size:1.02rem; max-width:560px;">
+      Trag deinen Namen und deine E-Mail-Adresse ein. Danach siehst du, was zwischen euch sichtbar ist, welche Frage offen bleibt und welcher nächste Schritt zu deiner Situation passt.
+    </p>
+    <div class="field hp-field" aria-hidden="true">
+      <label for="companyInput">Firma</label>
+      <input type="text" id="companyInput" name="company" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="field">
+      <label class="field-label" for="nameInput">Dein Vorname</label>
+      <input type="text" id="nameInput" placeholder="Vorname" autocomplete="given-name" required>
+    </div>
+    <div class="field">
+      <label class="field-label" for="emailInput">Deine E-Mail</label>
+      <input type="email" id="emailInput" placeholder="name@beispiel.de" autocomplete="email" required>
+    </div>
+
+    <!-- Einwilligungs-Checkbox -->
+    <div class="field" style="display:flex; align-items:flex-start; gap:12px; margin-top:8px;">
+      <input type="checkbox" id="consentInput" style="margin-top:5px; flex-shrink:0; width:18px; height:18px; accent-color:var(--primary); cursor:pointer;">
+      <label for="consentInput" style="font-size:0.84rem; color:var(--text-mut); line-height:1.5; cursor:pointer;">
+        Ja, ich möchte meine Auswertung und weitere klare Impulse von Angelika zu Dating, Situationships und Selbstführung per E-Mail erhalten.
+      </label>
+    </div>
+
+    <!-- Datenschutz-Hinweis (Mini) -->
+    <p style="font-size:0.74rem; color:var(--text-mut); margin-top:10px; line-height:1.5;">
+      Du kannst dich jederzeit mit einem Klick abmelden. Mehr in der
+      <a href="https://www.themagneticfemme.co/datenschutz" target="_blank" rel="noopener" style="color:var(--primary); text-decoration:underline;">Datenschutzerklärung</a>.
+    </p>
+
+    <div class="form-trust" aria-label="Hinweise zur Anmeldung">
+      <span>Dein Ergebnis sofort</span>
+      <span>Kostenfrei</span>
+      <span>Jederzeit abmeldbar</span>
+    </div>
+    <div id="emailError" class="error-message" role="alert" aria-live="polite"></div>
+    <button class="btn btn-block" id="submitBtn" onclick="showResult()">Mein Ergebnis anzeigen</button>
+    <p style="font-size:0.78rem; color:var(--text-mut); margin-top:14px; line-height:1.5; text-align:center;">
+      Kein Spam. Du kannst dich jederzeit mit einem Klick abmelden.
+    </p>
+  </div>
+
+  <!-- DANKE (Übergang zum Ergebnis) -->
+  <div class="screen" id="screen-danke">
+    <div class="danke-wrap">
+      <div class="res-label" style="justify-content:center;">Dein Reality Check</div>
+      <h2 class="danke-headline">Dein Ergebnis ist da.</h2>
+      <p class="danke-body">Es bewertet weder dich noch ihn. Es ordnet ein, was zwischen euch tatsächlich passiert.</p>
+      <p class="danke-body">Lies es nach dem, was sichtbar ist. Nicht nach der schönsten Erklärung dafür.</p>
+      <p class="danke-line">Nicht die Dauer entscheidet. Die Richtung entscheidet.</p>
+      <button class="btn" id="dankeBtn" onclick="revealResult()">Mein Ergebnis ansehen <span class="arrow">→</span></button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-screen" id="screen-result">
+    <div class="res-label" id="resStage">Dein Ergebnis</div>
+    <h2 class="res-headline" id="resHeadline"></h2>
+    <p class="res-diagnose" id="resDiagnose"></p>
+
+    <div class="result-evidence">
+      <div class="evidence-label">Das zeigen deine Antworten</div>
+      <ul class="evidence-list" id="resEvidence"></ul>
+    </div>
+
+    <div class="res-divider"></div>
+
+    <div class="res-block" id="resBody"></div>
+
+    <div class="res-divider thick"></div>
+
+    <div class="res-label">Dein nächster Schritt</div>
+    <div class="res-cta" id="resCta"></div>
+
+    <div class="release-card" id="releaseCard"></div>
+
+    <p class="res-disclaimer" id="resDisclaimer"></p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    © 2026 The Magnetic Femme · Angelika Reimer<br>
+    <a href="https://www.themagneticfemme.co/impressum" target="_blank" rel="noopener">Impressum</a>
+    <span class="sep">·</span>
+    <a href="https://www.themagneticfemme.co/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+    <p class="footer-disclaimer">This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+  </footer>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   THE SITUATIONSHIP DETECTOR
+   Drei Prüfbereiche: Richtung, Verlässlichkeit, Offenhalten.
+   Jede Antwort erhält 0 bis 2 Punkte. Alle drei Ergebnisse
+   sind Abstufungen einer vorab qualifizierten Situationship.
+   ══════════════════════════════════════════════════════════ */
+const QUESTIONS = [
+  { axis: 'direction', text: 'Wenn dich heute jemand fragt: „Was ist das zwischen euch?“, was würdest du antworten?', options: [
+    { label: 'Es ist mehr als Dating, aber wir haben nie darüber gesprochen, was wir sind.', score: 0, signal: 'Es ist mehr als Dating, aber ihr habt nie darüber gesprochen, was ihr seid.' },
+    { label: 'Wir haben darüber gesprochen, aber er bleibt vage und sagt, dass er noch Zeit braucht.', score: 1, signal: 'Ihr habt darüber gesprochen, doch seine Antwort bleibt vage und vertagt die Entscheidung.' },
+    { label: 'Er verhält sich wie mein Freund, sagt aber klar, dass er keine Beziehung will.', score: 2, signal: 'Sein Verhalten wirkt wie Beziehung, obwohl er klar sagt, dass er keine will.' }
+  ]},
+  { axis: 'direction', text: 'Verglichen mit euren ersten Wochen: Weißt du heute klarer, woran du bist?', options: [
+    { label: 'Etwas klarer, aber eine gemeinsame Entscheidung fehlt weiterhin.', score: 0, signal: 'Es ist etwas klarer geworden, aber eine gemeinsame Entscheidung fehlt weiterhin.' },
+    { label: 'Nein. Wir haben mehr Nähe, aber nicht mehr Klarheit.', score: 1, signal: 'Mehr Nähe hat bisher nicht zu mehr Klarheit geführt.' },
+    { label: 'Eher weniger. Jedes gute Treffen macht mir wieder Hoffnung, jede Distanz verunsichert mich.', score: 2, signal: 'Nähe gibt dir Hoffnung, Distanz stellt wieder alles infrage.' }
+  ]},
+  { axis: 'consistency', text: 'Nach einem schönen Wochenende oder intensiven Abend: Wie geht es danach weiter?', options: [
+    { label: 'Er meldet sich weiter, aber wann wir uns wiedersehen, bleibt meistens offen.', score: 0, signal: 'Der Kontakt bleibt, konkrete nächste Pläne aber meistens nicht.' },
+    { label: 'Danach wird er oft merklich kühler oder knapper.', score: 1, signal: 'Nach intensiver Nähe wird er oft merklich kühler oder knapper.' },
+    { label: 'Auf intensive Nähe folgt fast zuverlässig eine Phase Distanz.', score: 2, signal: 'Auf intensive Nähe folgt bei euch fast zuverlässig Distanz.' }
+  ]},
+  { axis: 'direction', text: 'Du schlägst etwas vor, das drei Monate in der Zukunft liegt. Wie reagiert er?', options: [
+    { label: 'Er findet die Idee schön, sagt aber, wir sollten einfach schauen, wie es sich entwickelt.', score: 0, signal: 'Gemeinsame Zukunftsideen bleiben bei „Wir schauen, wie es sich entwickelt“.' },
+    { label: 'Er weicht aus oder hält sich alle Möglichkeiten offen.', score: 1, signal: 'Sobald es um Zukunft geht, hält er sich alle Möglichkeiten offen.' },
+    { label: 'Ich spreche solche Dinge kaum noch an, weil ich keinen Druck machen will.', score: 2, signal: 'Du sprichst Zukunft kaum noch an, weil du keinen Druck machen willst.' }
+  ]},
+  { axis: 'consistency', text: 'Welchen Platz hast du in seinem echten Leben?', options: [
+    { label: 'Ich kenne einzelne Freunde, aber als Partnerin stellt er mich nicht vor.', score: 0, signal: 'Du kennst einzelne Freunde, hast aber keinen klar benannten Platz in seinem Leben.' },
+    { label: 'Wir haben viel Kontakt, aber in seinem Alltag komme ich kaum vor.', score: 1, signal: 'Ihr habt viel Kontakt, doch in seinem Alltag bist du kaum sichtbar.' },
+    { label: 'Unsere Nähe findet fast nur privat oder spontan statt.', score: 2, signal: 'Eure Nähe bleibt überwiegend privat oder entsteht spontan.' }
+  ]},
+  { axis: 'consistency', text: 'Habt ihr klar darüber gesprochen, ob ihr andere Menschen datet?', options: [
+    { label: 'Er sagt, dass er gerade niemand anderen datet. Exklusivität haben wir trotzdem nie vereinbart.', score: 0, signal: 'Er datet nach eigener Aussage niemand anderen, ohne mit dir Exklusivität zu vereinbaren.' },
+    { label: 'Nur indirekt. Ich gehe davon aus, dass da niemand anderes ist.', score: 1, signal: 'Exklusivität ist eine Annahme, keine klare Vereinbarung.' },
+    { label: 'Er will sich nicht festlegen, und ich frage nicht weiter, weil ich die Antwort fürchte.', score: 2, signal: 'Er will sich nicht festlegen, und du fragst nicht weiter, weil du die Antwort fürchtest.' }
+  ]},
+  { axis: 'direction', text: 'Was passiert, wenn du fragst: „Wo geht das mit uns hin?“', options: [
+    { label: 'Er sagt, dass er mich sehr mag und einfach noch Zeit braucht.', score: 0, signal: 'Auf deine Frage nach Richtung antwortet er mit Gefühlen und mehr Zeit.' },
+    { label: 'Er wird vage: Warum muss man alles benennen? Lass uns genießen, was wir haben.', score: 1, signal: 'Wenn du Klarheit willst, wird die Notwendigkeit der Frage infrage gestellt.' },
+    { label: 'Ich stelle die Frage nicht mehr, weil ich Angst habe, dass dann alles vorbei ist.', score: 2, signal: 'Du stellst die entscheidende Frage nicht mehr, weil du die Verbindung nicht verlieren willst.' }
+  ]},
+  { axis: 'cost', text: 'Was hat sich in deinem Leben verändert, seit es ihn gibt?', options: [
+    { label: 'Ich mache meine Pläne weiter, frage mich aber im Hintergrund ständig, ob er irgendwann dazugehört.', score: 0, signal: 'Auch während du dein Leben weiterlebst, bleibt seine mögliche Zukunft darin ständig präsent.' },
+    { label: 'Ich halte mir öfter Zeit frei, falls er sich meldet.', score: 1, signal: 'Du hältst dir Zeit frei, obwohl noch nichts vereinbart ist.' },
+    { label: 'Ich plane meine nächsten Monate innerlich um die Möglichkeit, dass er sich doch entscheidet.', score: 2, signal: 'Du planst deine nächsten Monate um seine mögliche Entscheidung.' }
+  ]},
+  { axis: 'cost', text: 'Wenn du denkst: „Eigentlich reicht mir das nicht“, welcher Satz kommt direkt danach?', options: [
+    { label: 'Ich nehme mir vor, es beim nächsten passenden Moment anzusprechen.', score: 0, signal: 'Du weißt, dass du es ansprechen willst, wartest aber weiter auf den passenden Moment.' },
+    { label: 'Aber zwischen uns ist etwas Besonderes. Vielleicht braucht er einfach noch Zeit.', score: 1, signal: 'Das Besondere zwischen euch und die Hoffnung auf mehr Zeit verschieben deine Grenze.' },
+    { label: 'Ich will keinen Druck machen und ihn dadurch verlieren.', score: 2, signal: 'Die Angst, ihn zu verlieren, macht deine eigene Wahrheit leiser.' }
+  ]},
+  { axis: 'cost', text: 'Wenn in sechs Monaten alles noch genauso ist: Welcher Satz wäre am ehrlichsten?', options: [
+    { label: 'Ich würde mich fragen, warum wir immer noch an genau demselben Punkt sind.', score: 0, signal: 'Schon heute ahnst du, dass sechs weitere Monate keine neue Richtung garantieren.' },
+    { label: 'Ich wäre enttäuscht, hätte aber wahrscheinlich weiter Hoffnung.', score: 1, signal: 'Auch nach sechs weiteren Monaten würdest du dich noch an Hoffnung halten.' },
+    { label: 'Ich weiß längst, dass ich so nicht weitermachen will.', score: 2, signal: 'Du weißt längst, dass du so nicht weitermachen willst.' }
+  ]}
+];
+
+const RESULTS = [
+  {
+    key: 'S1', max: 6, stage: 'Ergebnis 1 von 3 · Nähe ohne Klarheit',
+    tag: 'Detector: Naehe ohne Klarheit',
+    focus: 'Nähe ohne Klarheit',
+    headline: 'Ihr seid euch nah. Klar ist trotzdem nichts.',
+    diagnose: 'Zwischen euch ist echte Nähe entstanden. Eine gemeinsame Entscheidung darüber, was ihr seid und wohin es geht, fehlt weiterhin.',
+    body: [
+      { t: 'Vielleicht habt ihr viel Kontakt, vertraute Gespräche und Momente, die sich längst nach mehr als Dating anfühlen. Das alles kann echt sein. Es beantwortet nur nicht die Frage, ob ihr beide dieselbe Beziehung wollt.' },
+      { t: 'Eine Beziehung entsteht nicht dadurch, dass sie sich lange genug danach anfühlt. Sie entsteht, wenn beide dieselbe Richtung wählen.' },
+      { t: 'Die Frage, die jetzt zählt: Was ist zwischen euch heute wirklich entschieden – nicht nur gefühlt?', q: true }
+    ],
+    releaseLead: 'Du brauchst nicht noch mehr Nähe, um irgendwann Gewissheit zu haben. Du brauchst einen klaren Blick auf das, was heute da ist – und einen nächsten Schritt, der nicht von seiner möglichen Entscheidung abhängt.'
+  },
+  {
+    key: 'S2', max: 13, stage: 'Ergebnis 2 von 3 · Zuneigung ohne Entscheidung',
+    tag: 'Detector: Zuneigung ohne Entscheidung',
+    focus: 'Zuneigung ohne Entscheidung',
+    headline: 'Er mag dich. Für eine Beziehung entscheidet er sich trotzdem nicht.',
+    diagnose: 'Seine Zuneigung kann echt sein. Eine Entscheidung für die Beziehung, die du willst, ist sie nicht.',
+    body: [
+      { t: 'Er kann dich mögen, dich vermissen und eure Zeit ernst meinen. Er kann sich gleichzeitig nicht für die Beziehung entscheiden, die du willst. Beides kann wahr sein.' },
+      { t: 'Wenn auf deine Frage nach Klarheit immer wieder mehr Zeit, eine vage Antwort oder neue Distanz folgt, fehlt nicht das richtige Argument. Es fehlt seine Entscheidung.' },
+      { t: 'Die Frage, die jetzt zählt: Wie lange willst du sein Vielleicht noch wie ein gemeinsames Morgen behandeln?', q: true }
+    ],
+    releaseLead: 'Du musst seine Gefühle nicht kleinreden, um dich aus dem Vielleicht zu lösen. Du darfst anerkennen, was zwischen euch echt war – ohne deine Zukunft weiter an eine Entscheidung zu hängen, die er nicht trifft.'
+  },
+  {
+    key: 'S3', max: 20, stage: 'Ergebnis 3 von 3 · Du weißt es längst',
+    tag: 'Detector: Du weisst es laengst',
+    focus: 'Du weißt es längst',
+    headline: 'Du weißt längst, dass es dir nicht reicht.',
+    diagnose: 'Du suchst nicht mehr nach einem Hinweis. Du hältst eine Entscheidung offen, die du innerlich längst getroffen hast.',
+    body: [
+      { t: 'Du weißt, welche Beziehung du willst. Du siehst auch, dass diese Verbindung sie dir heute nicht gibt. Trotzdem öffnet jedes neue Signal die ganze Frage wieder.' },
+      { t: 'Das Schwierige ist nicht mehr, ihn zu verstehen. Es ist die Vorstellung, dass mit diesem Mann auch deine Zukunft verschwinden könnte. Aber Liebe, Partnerschaft und alles, was du dir wünschst, dürfen bleiben. Nur das Wer darf wieder offen werden.' },
+      { t: 'Die Frage, die jetzt zählt: Was würdest du heute entscheiden, wenn deine Zukunft nicht länger an seinem Namen hinge?', q: true }
+    ],
+    releaseLead: 'Du brauchst keine weitere Analyse seiner nächsten Nachricht. Du brauchst einen Weg, die halb offene Tür zu schließen, ohne damit deinen Wunsch nach Liebe und Zukunft aufzugeben.'
+  }
+];
+
+/* Vor Veröffentlichung die beiden finalen Zielseiten eintragen. Leer bedeutet: kein toter Button. */
+const FUNNEL_LINKS = {
+  community: 'https://www.themagneticfemme.co/community',
+  release: 'https://www.themagneticfemme.co/situationship-release'
+};
+
+const DISCLAIMER = 'Dieser Detector stellt keine Diagnose über dich oder ihn und ersetzt keine individuelle Beratung. Er ordnet ausschließlich deine Antworten zur aktuell sichtbaren Dynamik ein. Entscheidend bleiben konkrete Gespräche, Handlungen und gemeinsame Entscheidungen.';
+
+let answers = new Array(QUESTIONS.length).fill(null);
+let currentQ = 0;
+let freetextValue = '';
+let pendingResult = null;
+
+function buildQuestionScreens() {
+  const container = document.getElementById('questionContainer');
+  QUESTIONS.forEach((q, i) => {
+    const screen = document.createElement('div');
+    screen.className = 'screen';
+    screen.id = 'screen-q' + i;
+    screen.innerHTML = `
+      <div class="q-count">Frage ${i + 1}</div>
+      <div class="q-text">${q.text}</div>
+      <div class="options" id="opts-${i}">
+        ${q.options.map((opt, oi) => `
+          <button class="option" type="button" data-q="${i}" data-opt="${oi}" onclick="selectOption(${i}, ${oi})">${opt.label}</button>
+        `).join('')}
+      </div>
+      <div class="q-nav">
+        ${i > 0 ? '<button class="btn-ghost" type="button" onclick="prevQuestion()">Zurück</button>' : ''}
+      </div>
+    `;
+    container.appendChild(screen);
+  });
+}
+buildQuestionScreens();
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-result').classList.remove('active');
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startQuiz() {
+  document.getElementById('progressWrap').style.visibility = 'visible';
+  currentQ = 0;
+  goToQuestion(0);
+}
+
+function goToQuestion(i) {
+  currentQ = i;
+  showScreen('screen-q' + i);
+  updateProgress();
+  const selected = answers[i];
+  document.querySelectorAll(`#opts-${i} .option`).forEach((button, optionIndex) => {
+    button.classList.toggle('selected', selected === optionIndex);
+  });
+}
+
+function updateProgress() {
+  const total = QUESTIONS.length;
+  document.getElementById('progressFill').style.transform = 'scaleX(' + (currentQ / total) + ')';
+  document.getElementById('progressStep').textContent = `Frage ${currentQ + 1} von ${total}`;
+}
+
+function selectOption(questionIndex, optionIndex) {
+  answers[questionIndex] = optionIndex;
+  document.querySelectorAll(`#opts-${questionIndex} .option`).forEach((button, index) => {
+    button.classList.toggle('selected', index === optionIndex);
+  });
+  setTimeout(() => {
+    if (questionIndex < QUESTIONS.length - 1) goToQuestion(questionIndex + 1);
+    else goToFreetext();
+  }, 260);
+}
+
+function prevQuestion() {
+  if (currentQ > 0) goToQuestion(currentQ - 1);
+}
+
+function goToFreetext() {
+  document.getElementById('progressFill').style.transform = 'scaleX(1)';
+  document.getElementById('progressStep').textContent = 'Fast geschafft';
+  showScreen('screen-freetext');
+}
+
+function skipFreetext() {
+  freetextValue = '';
+  document.getElementById('freetextInput').value = '';
+  goToEmail();
+}
+
+function goToEmail() {
+  freetextValue = document.getElementById('freetextInput').value.trim();
+  showScreen('screen-email');
+}
+
+function validateEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function goToDanke() {
+  document.getElementById('progressWrap').style.visibility = 'hidden';
+  showScreen('screen-danke');
+}
+
+function revealResult() {
+  if (pendingResult) renderResult(pendingResult);
+}
+
+async function showResult() {
+  const name = document.getElementById('nameInput').value.trim();
+  const email = document.getElementById('emailInput').value.trim();
+  const consent = document.getElementById('consentInput').checked;
+  const company = document.getElementById('companyInput').value.trim();
+  const errorElement = document.getElementById('emailError');
+  const submitButton = document.getElementById('submitBtn');
+
+  if (!name) {
+    errorElement.textContent = 'Bitte trag deinen Vornamen ein.';
+    errorElement.style.display = 'block';
+    return;
+  }
+  if (!validateEmail(email)) {
+    errorElement.textContent = 'Bitte trag eine gültige E-Mail-Adresse ein.';
+    errorElement.style.display = 'block';
+    return;
+  }
+  if (!consent) {
+    errorElement.textContent = 'Bitte bestätige, dass du deine Auswertung und weitere Impulse von Angelika per E-Mail erhalten möchtest.';
+    errorElement.style.display = 'block';
+    return;
+  }
+  errorElement.style.display = 'none';
+
+  const result = computeResult();
+
+  submitButton.disabled = true;
+  submitButton.setAttribute('aria-busy', 'true');
+  submitButton.textContent = 'Deine Auswertung wird erstellt';
+
+  try {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15000);
+    const response = await fetch('/api/kajabi-optin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        result: result.tier.key,
+        consent: consent,
+        company: company
+      }),
+      signal: controller.signal
+    });
+    window.clearTimeout(timeout);
+
+    if (!response.ok) throw new Error('Submit failed: ' + response.status);
+
+    if (window.AnyTrack) {
+      try {
+        window.AnyTrack('event', 'Lead', {
+          email: email,
+          quiz_type: result.tier.key,
+          quiz_score: result.score
+        });
+      } catch (trackingError) {}
+    }
+    window.va('event', { name: 'Situationship Detector Completed', data: { result: result.tier.key } });
+
+    pendingResult = { result: result, name: name };
+    goToDanke();
+  } catch (error) {
+    console.error('Kajabi-Submit-Fehler:', error);
+    errorElement.textContent = 'Etwas ist schiefgelaufen. Bitte versuch es noch einmal.';
+    errorElement.style.display = 'block';
+    submitButton.disabled = false;
+    submitButton.removeAttribute('aria-busy');
+    submitButton.textContent = 'Mein Ergebnis anzeigen';
+  }
+}
+
+function computeResult() {
+  let score = 0;
+  const selected = [];
+
+  QUESTIONS.forEach((question, questionIndex) => {
+    const optionIndex = answers[questionIndex];
+    if (optionIndex === null) return;
+    const option = question.options[optionIndex];
+    score += option.score;
+    selected.push({
+      questionIndex: questionIndex,
+      axis: question.axis,
+      score: option.score,
+      signal: option.signal
+    });
+  });
+
+  const tier = RESULTS.find(result => score <= result.max) || RESULTS[RESULTS.length - 1];
+  const axes = ['direction', 'consistency', 'cost'];
+  const evidence = axes.map(axis => {
+    return selected
+      .filter(item => item.axis === axis)
+      .sort((a, b) => b.score - a.score || a.questionIndex - b.questionIndex)[0];
+  }).filter(Boolean);
+
+  return { score: score, tier: tier, evidence: evidence };
+}
+
+function renderResult(payload) {
+  const result = payload.result;
+  const tier = result.tier;
+
+  document.getElementById('resStage').textContent = tier.stage;
+  document.getElementById('resHeadline').textContent = tier.headline;
+  document.getElementById('resDiagnose').textContent = tier.diagnose;
+  document.getElementById('resEvidence').innerHTML = result.evidence
+    .map(item => `<li>${esc(item.signal)}</li>`)
+    .join('');
+
+  document.getElementById('resBody').innerHTML = tier.body.map(paragraph => {
+    const className = paragraph.q ? 'res-quote' : (paragraph.s ? 'standout' : '');
+    return `<p class="${className}">${esc(paragraph.t)}</p>`;
+  }).join('');
+
+  let communityHtml = `
+    <p class="standout">Dein Ergebnis ist der Anfang. Entscheidend ist, was du ab heute nicht mehr offenhältst.</p>
+    <p>In der kostenfreien Community bekommst du klare Impulse dazu, wie du bei dir bleibst, die sichtbare Realität ernst nimmst und deine Zukunft nicht länger von seinem Vielleicht abhängig machst.</p>
+  `;
+  if (FUNNEL_LINKS.community) {
+    communityHtml += buildLinkButton(
+      appendUtm(FUNNEL_LINKS.community, 'community', tier.key),
+      'Kostenfrei in die Community',
+      'Community Click',
+      tier.key
+    );
+  } else {
+    communityHtml += '<p class="res-cta-sub">Den Zugang zur Community erhältst du über deine E-Mail.</p>';
+  }
+  document.getElementById('resCta').innerHTML = communityHtml;
+
+  let releaseHtml = `
+    <div class="release-kicker">Dein nächster klarer Schritt</div>
+    <h3>THE SITUATIONSHIP <em>RELEASE</em> <span class="release-price">· 27&nbsp;€</span></h3>
+    <p>${esc(tier.releaseLead)}</p>
+    <p>THE SITUATIONSHIP RELEASE hilft dir, diesen Mann von deiner Vorstellung von Zukunft zu lösen und die tägliche Neuverhandlung zu beenden. Liebe, Partnerschaft und deine Wünsche dürfen bleiben. Nur das Wer wird wieder offen.</p>
+  `;
+  if (FUNNEL_LINKS.release) {
+    releaseHtml += buildLinkButton(
+      appendUtm(FUNNEL_LINKS.release, 'release', tier.key),
+      'THE SITUATIONSHIP RELEASE starten · 27 €',
+      'Release Click',
+      tier.key
+    );
+  } else {
+    releaseHtml += '<div class="release-note">Alle Details zu THE SITUATIONSHIP RELEASE folgen über deine E-Mail.</div>';
+  }
+  document.getElementById('releaseCard').innerHTML = releaseHtml;
+  document.getElementById('resDisclaimer').textContent = DISCLAIMER;
+
+  document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+  document.getElementById('progressWrap').style.visibility = 'hidden';
+  document.getElementById('screen-result').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function buildLinkButton(url, label, eventName, resultKey) {
+  return `<a class="btn" href="${esc(url)}" target="_blank" rel="noopener" onclick="trackCta('${esc(eventName)}', '${esc(resultKey)}')">${esc(label)} <span class="arrow">→</span></a>`;
+}
+
+function appendUtm(url, content, resultKey) {
+  const separator = url.includes('?') ? '&' : '?';
+  return url + separator + 'utm_source=situationship-detector&utm_medium=result&utm_campaign=situationship-funnel&utm_content=' + encodeURIComponent(content + '-' + resultKey.toLowerCase());
+}
+
+function trackCta(eventName, resultKey) {
+  window.va('event', { name: eventName, data: { result: resultKey } });
+}
+
+function esc(value) {
+  if (value === null || value === undefined) return '';
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+document.getElementById('emailInput').addEventListener('keydown', event => {
+  if (event.key === 'Enter') showResult();
+});
+</script>
+<script src="/consent-manager.js"></script>
+<script>
+window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+TMFConsent.init({cookieDomain:".themagneticfemme.co",version:"2026-08-23",services:{anyTrackUrl:"https://assets.anytrack.io/RDHNIBqg8pTP.js",analyticsScripts:[{src:"/_vercel/insights/script.js",id:"tmf-vercel-analytics"}]}});
+</script>
+</body>
+</html>
