@@ -983,6 +983,23 @@ function revealResult() {
   if (pendingResult) renderResult(pendingResult);
 }
 
+function getSignupAttribution(resultKey) {
+  const params = new URLSearchParams(window.location.search);
+  let referrerHost = '';
+  try { referrerHost = document.referrer ? new URL(document.referrer).hostname : ''; } catch {}
+  const landingUrl = new URL(window.location.href);
+  landingUrl.hash = '';
+  return {
+    source: params.get('utm_source') || params.get('source') || referrerHost || 'direct',
+    medium: params.get('utm_medium') || '',
+    campaign: params.get('utm_campaign') || '',
+    content: params.get('utm_content') || params.get('result') || resultKey || '',
+    term: params.get('utm_term') || '',
+    landingUrl: landingUrl.toString(),
+    referrerUrl: document.referrer || ''
+  };
+}
+
 async function showResult() {
   const name = document.getElementById('nameInput').value.trim();
   const email = document.getElementById('emailInput').value.trim();
@@ -1025,7 +1042,8 @@ async function showResult() {
         email: email,
         result: result.tier.key,
         consent: consent,
-        company: company
+        company: company,
+        attribution: getSignupAttribution(result.tier.key)
       }),
       signal: controller.signal
     });
@@ -1033,15 +1051,6 @@ async function showResult() {
 
     if (!response.ok) throw new Error('Submit failed: ' + response.status);
 
-    if (window.AnyTrack) {
-      try {
-        window.AnyTrack('event', 'Lead', {
-          email: email,
-          quiz_type: result.tier.key,
-          quiz_score: result.score
-        });
-      } catch (trackingError) {}
-    }
     window.va('event', { name: 'Situationship Detector Completed', data: { result: result.tier.key } });
 
     pendingResult = { result: result, name: name };
@@ -1187,7 +1196,7 @@ TMFSocialProof.init({
 <script src="/consent-manager.js"></script>
 <script>
 window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-TMFConsent.init({cookieDomain:".themagneticfemme.co",version:"2026-10-14",services:{metaPixelId:"1637151110590375",googleTagId:"G-MB3DD83NZR",googleTagManagerId:"",anyTrackUrl:"https://assets.anytrack.io/RDHNIBqg8pTP.js",analyticsScripts:[{src:"/_vercel/insights/script.js",id:"tmf-vercel-analytics"}]}});
+TMFConsent.init({cookieDomain:".themagneticfemme.co",version:"2026-10-14",services:{metaPixelId:"1637151110590375",googleTagId:"G-MB3DD83NZR",googleTagManagerId:"",analyticsScripts:[{src:"/_vercel/insights/script.js",id:"tmf-vercel-analytics"}]}});
 </script>
 </body>
 </html>

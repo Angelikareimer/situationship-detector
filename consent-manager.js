@@ -23,7 +23,6 @@
       metaPixelId: "",
       googleTagId: "",
       googleTagManagerId: "",
-      anyTrackUrl: "",
       analyticsScripts: [],
       marketingScripts: []
     }
@@ -144,12 +143,6 @@
     loadScript("https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(id), "tmf-google-tag-manager");
   }
 
-  function enableAnyTrack(url) {
-    if (!url) return;
-    window.AnyTrack = window.AnyTrack || function () { (window.AnyTrack.q = window.AnyTrack.q || []).push(arguments); };
-    loadScript(url, "tmf-anytrack");
-  }
-
   function apply(consent) {
     currentConsent = consent;
     if (consent.analytics) {
@@ -159,7 +152,6 @@
     }
     if (consent.marketing) {
       enableMetaPixel(config.services.metaPixelId);
-      enableAnyTrack(config.services.anyTrackUrl);
       loadList(config.services.marketingScripts, "tmf-marketing");
     }
     window.dispatchEvent(new CustomEvent("tmf:consent", { detail: consent }));

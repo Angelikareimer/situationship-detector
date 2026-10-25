@@ -25,6 +25,17 @@ function extractEmbedValue(source, pattern, label) {
   return match[1].replaceAll('\\u0026', '&');
 }
 
+function cleanAttribution(attribution) {
+  const value = attribution && typeof attribution === 'object' ? attribution : {};
+  const clean = {};
+  for (const [key, input] of Object.entries(value)) {
+    if (typeof input !== 'string') continue;
+    const trimmed = input.trim().slice(0, 1000);
+    if (trimmed) clean[key] = trimmed;
+  }
+  return clean;
+}
+
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
 
@@ -37,7 +48,7 @@ module.exports = async function handler(req, res) {
     return res.status(403).json({ ok: false, error: 'Origin not allowed' });
   }
 
-  const { name, email, result, consent, company } = req.body || {};
+  const { name, email, result, consent, company, attribution } = req.body || {};
   if (company) return res.status(200).json({ ok: true });
   if (consent !== true) return res.status(400).json({ ok: false, error: 'Consent required' });
   if (!FORM_IDS[result]) return res.status(400).json({ ok: false, error: 'Invalid result' });
@@ -74,6 +85,20 @@ module.exports = async function handler(req, res) {
       'form_submission[email]': email.trim().toLowerCase(),
       kjb_visitor_time_zone: req.headers['x-vercel-ip-timezone'] || 'Europe/Zurich'
     });
+
+    const tracked = cleanAttribution(attribution);
+    const attributionFields = {
+      source: 'custom_2',
+      medium: 'custom_3',
+      campaign: 'custom_4',
+      content: 'custom_5',
+      term: 'custom_6',
+      landingUrl: 'custom_7',
+      referrerUrl: 'custom_8'
+    };
+    for (const [key, handle] of Object.entries(attributionFields)) {
+      if (tracked[key]) payload.set(`form_submission[${handle}]`, tracked[key]);
+    }
 
     const submission = await fetch(action, {
       method: 'POST',
